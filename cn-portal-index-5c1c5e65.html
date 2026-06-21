@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询与延伸 · pg模拟器笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f6f3ef;
+            font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+            color: #2e2b28;
+            line-height: 1.75;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fefcf9;
+            padding: 2.4rem 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ebe6de;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #2c241e;
+            border-left: 4px solid #c0a992;
+            padding-left: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #8b7f72;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-bottom: 1px dashed #ddd5cb;
+            padding-bottom: 0.8rem;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        blockquote {
+            margin: 1.8rem 0;
+            padding: 1rem 1.5rem;
+            background: #f4efe9;
+            border-left: 4px solid #b8a696;
+            color: #4d433b;
+            font-style: normal;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.96rem;
+        }
+        blockquote p {
+            margin-bottom: 0.4rem;
+        }
+        blockquote .source {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #7b6e60;
+            text-align: right;
+        }
+        .faq-note {
+            background: #faf7f2;
+            padding: 1.2rem 1.6rem;
+            border-radius: 18px;
+            margin: 1.6rem 0;
+            border: 1px solid #e3dbd0;
+        }
+        .faq-note summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3d342b;
+            font-size: 1.05rem;
+            padding: 0.2rem 0;
+        }
+        .faq-note details {
+            margin-bottom: 0.5rem;
+        }
+        .faq-note details:last-child {
+            margin-bottom: 0;
+        }
+        .faq-note details p {
+            margin: 0.5rem 0 0 0.8rem;
+            font-size: 0.95rem;
+            color: #4f4439;
+        }
+        .visit-hint {
+            background: #eae3da;
+            padding: 1.2rem 1.8rem;
+            border-radius: 30px;
+            text-align: center;
+            margin: 2.2rem 0 1.2rem;
+            font-size: 1.02rem;
+            color: #2e2620;
+            border: 1px solid #d6cbbe;
+        }
+        .visit-hint a {
+            color: #2c241e;
+            text-decoration: none;
+            border-bottom: 1px solid #a58e7a;
+            font-weight: 500;
+            transition: border 0.2s;
+        }
+        .visit-hint a:hover {
+            border-bottom: 1px solid #4f3f30;
+        }
+        .footer-note {
+            margin-top: 2.8rem;
+            font-size: 0.85rem;
+            color: #9b8d7e;
+            text-align: center;
+            border-top: 1px solid #e5ddd4;
+            padding-top: 1.5rem;
+        }
+        a {
+            color: #5c4d3d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #d6c5b4;
+        }
+        a:hover {
+            color: #2f261e;
+        }
+        @media (max-width: 520px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .page {
+                padding: 1.6rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>日常查询·对照·延伸</h1>
+    <div class="subhead">从习惯的记录到随手的翻阅，一个不起眼的端口</div>
+
+    <p>每个星期总有那么四五天，我会点开同一个网址。不是为了完成任务，也不是因为什么非看不可的理由——更像是一种随手翻阅的习惯。就像翻一本翻熟了的书，你知道哪一页大概写着什么，但还是会停下来，再看一遍。这种时候，我常常打开的是 <a href="https://cn-portal-pg.com">pg模拟器</a> 的页面，安静地浏览那些参数与界面。谈不上钻研，更像是跟一个老朋友打个招呼。</p>
+
+    <p>说起来有点好笑，最早注意到这个工具是因为一个很具体的需求：手头有一批旧数据，格式乱，字段对不上，想找个地方快速跑一遍对照逻辑。那时候试过命令行，也装过几个本地环境，但总觉得有点重。后来同事随口提了一句，说有个网页版的模拟环境，不用安装，打开就能试。我试了一下，界面很素，没有多余的花哨，但该有的查询、运算、导出基本都有。那天下午我泡了杯茶，坐在那对了整整两小时的数据，居然一次也没卡壳。</p>
+
+    <p>从那之后，它就成了我书签栏里一个常驻的存在。说是生产力工具吧，其实更多时候我只是拿来做对照——写 SQL 的时候不确定某个函数的返回值，随手开个页面跑一下，比翻文档快得多。有时候甚至会把它当作一个临时的便签本：把一些中间结果贴进去，排序、过滤、看一眼，再粘回去。它不挑活，也不抱怨输入有多乱。这种沉默的可靠感，反而让人用得顺手。</p>
+
+    <p>前不久一个朋友问我，有没有什么工具可以快速验证几条查询语句的结果，不用装客户端的那种。我想了想，直接把链接发给了他。过了两天他回消息，说这个东西挺顺手的，尤其是输出格式很清楚，省去了来回对齐的麻烦。我没有多推荐什么，只是跟他说，我每天都用，稳定得很。</p>
+
+    <blockquote>
+        <p>“有些工具就是这样，你形容不出它哪里特别，但每次打开它，心里很踏实。它不会催你，不会弹窗，不会告诉你‘你该升级了’。它就安安静静地在那里等你输入，然后给你结果。”</p>
+        <span class="source">——来自一位使用者的随手记录</span>
+    </blockquote>
+
+    <p>其实延伸阅读也是一样的道理。很多时候我们找资料，并不是为了深挖某个技术点，而是想看看其他人是怎么处理类似问题的。比如上次我想对比几种字符串截取方式的性能差异，在 <a href="https://cn-portal-pg.com">pg模拟器</a> 里跑了几组不同的写法，再把结果截下来贴到笔记里，方便以后翻看。没有复杂的流程，也不需要切换环境，整个过程行云流水。</p>
+
+    <p>我也见过一些朋友把它当作一个轻量的教学辅助。带新人练习查询逻辑的时候，与其让他在本地配环境，不如直接扔一个链接过去，让他自己动手试试。新人自己摸索的时候，遇到不懂的语法，随手敲进去看看输出，理解起来比光看书快得多。有时候他们还会把一些奇怪的报错贴给我看，我隔着屏幕也看不明白，就让他们在模拟器里跑一遍简化版，问题往往自己就暴露了。</p>
+
+    <div class="faq-note">
+        <details>
+            <summary>▸ 有人问：日常使用会不会有数据安全问题？</summary>
+            <p>模拟器环境是在浏览器端独立运行的，所有输入和运算都在本地完成，不会上传到任何服务器。换句话说，你贴进去的数据，只有你和你的浏览器知道。这一点对于经常处理敏感数据的用户来说尤其放心。</p>
+        </details>
+        <details>
+            <summary>▸ 还有人问：支持哪些常用的查询操作？</summary>
+            <p>常见的过滤、排序、聚合、窗口函数、字符串处理、日期运算等都支持。虽然不是一个完整的数据库系统，但对于日常的查询验证、逻辑对照和数据清洗来说，覆盖范围已经很够用了。具体支持列表可以直接在页面里查看内置的示例。</p>
+        </details>
+    </div>
+
+    <div class="visit-hint">
+        <span>每天都会打开看看 —— </span><a href="https://cn-portal-pg.com">pg模拟器</a>
+    </div>
+
+    <p>说到底，工具的价值不在于它有多新，而在于你用它的那段时间里，它有没有帮你省下一些不必要的折腾。至少对我这样的普通使用者来说，一个能开箱即用、稳定不打扰、还能随时拿出来做对照和延伸阅读的地方，已经足够好了。它不张扬，不推销，不制造焦虑，只是安安静静地在浏览器里等你输入下一个查询。</p>
+
+    <p>有一天下午，我坐在窗边，电脑屏幕上只有那个简洁的输入区。光标一闪一闪的，我忽然觉得，这个界面就像一本翻到中间页的书——你随时可以停，也随时可以继续。而我要做的，不过是把想说的话写下去而已。</p>
+
+    <div class="footer-note">
+        日常记录 · 不设模板 · 随翻随用
+    </div>
+</div>
+</body>
+</html>
